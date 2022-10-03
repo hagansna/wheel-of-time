@@ -1,0 +1,27 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model Book {
+  id                 Int      @id @default(autoincrement())
+  author             String   @db.VarChar(255)
+  title              String   @db.VarChar(255)
+  release_date       DateTime
+  order              Int
+  isbn               String   @db.VarChar(255)
+  original_cover_url String
+  blurb              String   @db.VarChar(2048)
+  page_count         Int
+  chapter_count      Int
+  word_count         Int
+}

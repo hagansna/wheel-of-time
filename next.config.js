@@ -5,6 +5,7 @@ const nextConfig = {
   env: {
     DB_USER: "root",
     DB_PASS: "root",
+    DATABASE_URL: "http://127.0.0.1:8000/rpc",
   },
   images: {
     remotePatterns: [
