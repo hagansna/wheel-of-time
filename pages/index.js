@@ -25,7 +25,6 @@ export async function getStaticProps() {
   books.sort((a, b) => a.order - b.order);
 
   books = doBookAggregation(books);
-  console.log("books here", books);
   return {
     props: {
       books,
